@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video play pause</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10vh;
+        }
+        .heading {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        h2{
+            text-align: center;
+        }
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="heading">hello javascript</h1>
+
+    <div class="container">
+        <video id="my-video"
+        src="WhatsApp Video 2023-07-30 at 13.26.06.mp4" height="350px" controls>
+        </video>
+    </div>
+
+
+    <h2>Click <span>p</span> on keyboard to play the video</h2>
+    <h2>Click <span>k</span> on keyboard to stop the video</h2>
+    <h2>Click <span>m</span> on keyboard to mute the video</h2>
+    <h2>Click <span>u</span> on keyboard to unmute the video</h2>
+
+    <script>
+        const myVideo = document.querySelector("#my-video");
+        const play = "p";
+        const stop = "k";
+        const mute = "m";
+        const unmute = "u";
+
+
+        window.addEventListener("keydown" , feature);
+
+        function feature(e) {
+            console.log(e.key);
+            let user = e.key;
+            if (user == play) {
+                myVideo.play();
+            }
+            if (user == stop) {
+                myVideo.pause();
+            }
+            if (user == mute) {
+                myVideo.muted = true;
+            }
+            if (user == unmute) {
+                myVideo.muted = false;
+            }
+        }
+
+    </script>
+</body>
+</html>
